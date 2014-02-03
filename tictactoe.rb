@@ -29,24 +29,26 @@
 
   def renderGrid
     puts
-    puts "1 | 2 | 3"
-    puts "- + - + -"
-    puts "4 | 5 | 6"
-    puts "- + - + -"
-    puts "6 | 8 | 9"
+    puts "Use this grid as a reference"
+    puts
+    puts "\t1 | 2 | 3"
+    puts "\t- + - + -"
+    puts "\t4 | 5 | 6"
+    puts "\t- + - + -"
+    puts "\t6 | 8 | 9"
   end
 
   def renderBoard
+    puts 
+    puts "\t#{@board[0]} | #{@board[1]} | #{@board[2]}"
+    puts "\t- + - + -"
+    puts "\t#{@board[3]} | #{@board[4]} | #{@board[5]}"
+    puts "\t- + - + -"
+    puts "\t#{@board[6]} | #{@board[7]} | #{@board[8]}"
     puts
-    puts "#{@board[0]} | #{@board[1]} | #{@board[2]}"
-    puts "- + - + -"
-    puts "#{@board[3]} | #{@board[4]} | #{@board[5]}"
-    puts "- + - + -"
-    puts "#{@board[6]} | #{@board[7]} | #{@board[8]}"
   end
 
   def game
-
 
     winning_position = false
     while winning_position == false && boardNotFull?     
@@ -60,7 +62,8 @@
   end
 
   def nextTurn
-    who = turn      
+    who = turn
+    print `clear`      
     renderGrid
     renderBoard                 
     print who + "'s turn. " 
@@ -74,7 +77,7 @@
       end
     end
 
-    @board[choice - 1] = turn.downcase     
+    @board[choice - 1] = turn.upcase     
     @turn += 1                  
   end
 
@@ -97,18 +100,16 @@
   # end
   end
 
-  game
+    response = menu
 
-response = menu
- 
-while response != 'q'
-  case response
-  when 'p'
-    game 
+  while response != 'q'
+    case response
+    when 'p'
+      game 
+    end
+   
+    response = menu
   end
- 
-  response = menu
-end
 
 # end
 
