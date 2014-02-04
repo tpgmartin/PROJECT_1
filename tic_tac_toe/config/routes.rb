@@ -1,14 +1,13 @@
 TicTacToe::Application.routes.draw do
   resources :moves
 
-
   resources :welcomes
 
   resources :games
 
   resources :users
 
-  root :to => 'welcome#index'
+  root :to => 'welcomes#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

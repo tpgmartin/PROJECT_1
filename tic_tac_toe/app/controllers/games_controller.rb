@@ -25,7 +25,7 @@ class GamesController < ApplicationController
   # GET /games/new.json
   def new
     @game = Game.new
-
+    # @board = [ " ", " ", " ", " ", " ", " ", " ", " ", " " ]
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @game }

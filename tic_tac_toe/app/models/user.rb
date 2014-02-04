@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :password_digest, :password, :password_confirmation, :role, :description, :sex, :address, :win, :loss, :game_id
+  attr_accessible :name, :email, :password_digest, :password, :password_confirmation, :role, :description, :sex, :address, :win, :loss
 
-  has_and_belongs_to_many :games
+  has_many :games
 
-  has_many :moves, through: :game
+  # has_many :moves, through: :game
 
   validates :name, presence: true
   validates :email, presence: true
