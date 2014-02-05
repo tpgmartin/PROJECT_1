@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  player: 
+  game: 
+  square: 1
+  symbol: MyString
+
+two:
+  player: 
+  game: 
+  square: 1
+  symbol: MyString
