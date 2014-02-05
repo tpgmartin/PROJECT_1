@@ -21,6 +21,11 @@
         <li>
           <%=link_to 'Games', games_path %> 
         </li>
+        <% flash.each do |name, message| %>
+          <div class="flash-message flash-message-<%= name %>">
+            <%= message %>
+          </div>
+        <% end %>
       </nav>
       <h1>Title</h1>
     </header>
@@ -28,6 +33,12 @@
   <div id="content">
 
   <section id="main-section">
+    <% if current_user %>
+     <p> hello, <%= current_user.email %> </p>
+     <%= link_to 'Logout', sessions_path(session), method: :delete, data: {confirm: ‘Are you sure?’} %>
+    <% else %>
+     <%= link_to 'Please login', login_path %>
+    <% end %>
     <%= yield %>
   </section>
 

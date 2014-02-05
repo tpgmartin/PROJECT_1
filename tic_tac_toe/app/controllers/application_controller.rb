@@ -5,11 +5,11 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     alert_message = case 
-                    when current_user
-                      "You don't have access to this page."
-                    else
-                      "You need to login to access this page."
-                    end
+      when current_user
+        "You don't have access to this page."
+      else
+        "You need to login to access this page."
+      end
     redirect_to root_path, alert: alert_message
   end
 

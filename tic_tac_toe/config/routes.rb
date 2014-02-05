@@ -1,4 +1,10 @@
 TicTacToe::Application.routes.draw do
+  get 'login', to: "sessions#new"
+
+  get "sessions#create"
+
+  get "sessions#destroy"
+
   resources :moves
 
   resources :welcomes
@@ -7,7 +13,9 @@ TicTacToe::Application.routes.draw do
 
   resources :users
 
-  root :to => 'welcomes#index'
+  resources :sessions, only: [:new, :create, :destroy]
+
+  root :to => 'users#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -8,6 +8,9 @@
   </tr>
 
 <% @users.each do |user| %>
+
+  <%= user.email %>
+  <%= user.password_digest %>
   <tr>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
