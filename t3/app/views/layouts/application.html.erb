@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>T3</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><%= link_to "Index", "/" %></li>
+      <li><%= link_to "Users", users_path%></li>
+      <li><%= link_to "Games", games_path%></li>
+    </ul>
+  </nav>
+
+  <% flash.each do |name, message| %>
+    <div class="flash-message flash-message-<%=name%>">
+      <%= message %>
+    </div>
+  <% end %>
+<%= yield %>
+
+</body>
+</html>
