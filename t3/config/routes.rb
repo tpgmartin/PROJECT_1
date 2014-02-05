@@ -1,11 +1,24 @@
 T3::Application.routes.draw do
+
+  root to: "homes#index"
+
+  resources :homes, path_names: { page: 'heimat' }
+
+  # get '/home', to: "homes#index", as: 'home'
+
+  resources :sessions, only: [:new, :create, :destroy]
+
+  resources :homes
+
   resources :moves
 
   resources :games
 
   resources :users
 
-  match '/', to: 'application#layout', as: :index
+  get '/signup', to: "users#new",        as: 'signup'
+  get '/login',  to: "sessions#new",     as: 'login'
+  delete '/logout', to: "sessions#destroy", as: 'logout'
 
 
   # The priority is based upon order of creation:
