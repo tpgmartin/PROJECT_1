@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140205182249) do
+ActiveRecord::Schema.define(:version => 20140205203715) do
 
   create_table "games", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20140205182249) do
     t.string   "email"
     t.string   "password"
     t.string   "password_confirmation"
+    t.string   "password_digest"
   end
 
 end
