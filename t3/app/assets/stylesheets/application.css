@@ -39,7 +39,9 @@ div #content {
 }
 
 nav img {
-  height: 20px;
+  height: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 ul li {
