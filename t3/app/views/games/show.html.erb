@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= form_for(@game) do |f| %>
+<%= form_for @game, :url => move_path, :method => :post do |f| %>
 
   <table>
     <tr>
