@@ -12,7 +12,9 @@ T3::Application.routes.draw do
 
   resources :moves
 
-  resources :games
+  resources :games do
+    post 'move/:square', to: 'games#move', as: :make_move
+  end
 
   resources :users
 

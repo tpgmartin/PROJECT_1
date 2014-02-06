@@ -41,6 +41,7 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.new(params[:game])
+    @game.user1 = current_user
 
     respond_to do |format|
       if @game.save
@@ -82,6 +83,10 @@ class GamesController < ApplicationController
   end
 
   def move
+    redirect_to(login_path) unless current_user
+    @game = Game.find(params[:game_id])
     
+    @game.make_move current_user, params[:square].to_i
+    redirect_to @game
   end
 end

@@ -10,7 +10,10 @@
       </ul>
     </div>
   <% end %>
-
+  <p>
+  <%= f.label :user2_id %>
+  <%= f.collection_select :user2_id, (User.all - [current_user]), :id, :email %>
+  </p>
   <div class="actions">
     <%= f.submit %>
   </div>

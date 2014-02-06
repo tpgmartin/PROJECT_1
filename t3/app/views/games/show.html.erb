@@ -1,26 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<%= form_for @game, :url => move_path, :method => :post do |f| %>
 
   <table>
     <tr>
       <td>
-        <% if @game.board[0] == " " %>
-          <%= f.submit " " %>
-        <% else %>
+        <% if @game.position_is_occupied?(0) %>
           <%= @game.board[0]%>
+        <% else %>
+          <%= button_to " ", game_make_move_path(@game, 0) %>
         <% end %>
       </td>
       <td>
         <% if @game.board[1] == " " %>
-          <%= f.submit " " %>
+          <%= button_to " ", game_make_move_path(@game, 1) %>
         <% else %>
           <%= @game.board[1]%>
         <% end %>
       </td>
       <td>
         <% if @game.board[2] == " " %>
-          <%= f.submit " " %>
+          <%= button_to " ", game_make_move_path(@game, 2) %>
         <% else %>
           <%= @game.board[2]%>
         <% end %>
@@ -30,21 +29,21 @@
     <tr>
       <td>
         <% if @game.board[3] == " " %>
-          <%= f.submit " " %>
+          <%= button_to " ", game_make_move_path(@game, 3) %>
         <% else %>
           <%= @game.board[3]%>
         <% end %>
       </td>
       <td>
         <% if @game.board[4] == " " %>
-          <%= f.submit " " %>
+          <%= button_to " ", game_make_move_path(@game, 4) %>
         <% else %>
           <%= @game.board[4]%>
         <% end %>
       </td>
       <td>
         <% if @game.board[5] == " " %>
-          <%= f.submit " " %>
+          <%= button_to " ", game_make_move_path(@game, 5) %>
         <% else %>
           <%= @game.board[5]%>
         <% end %>
@@ -54,21 +53,21 @@
     <tr>
       <td>
         <% if @game.board[6] == " " %>
-          <%= f.submit " " %>
+          <%= button_to " ", game_make_move_path(@game, 6) %>
         <% else %>
           <%= @game.board[6]%>
         <% end %>
       </td>
       <td>
         <% if @game.board[7] == " " %>
-          <%= f.submit " " %>
+          <%= button_to " ", game_make_move_path(@game, 7) %>
         <% else %>
           <%= @game.board[7]%>
         <% end %>
       </td>
       <td>
         <% if @game.board[8] == " " %>
-          <%= f.submit " " %>
+          <%= button_to " ", game_make_move_path(@game, 8) %>
         <% else %>
           <%= @game.board[8]%>
         <% end %>
@@ -76,7 +75,6 @@
     </tr>
   </table>
 
-<% end %>
 
 <br>
 

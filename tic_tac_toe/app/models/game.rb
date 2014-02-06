@@ -1,7 +1,7 @@
 class Game < ActiveRecord::Base
   attr_accessible :name, :rating, :description, :win, :loss
 
-  attr_reader :board
+  attr_reader :board, :turn
 
   belongs_to :user1, class_name: 'User'
   belongs_to :user2, class_name: 'User'
@@ -10,11 +10,17 @@ class Game < ActiveRecord::Base
   after_initialize :setup_initial_values
   
   def setup_initial_values
-    @board = [ " ", " ", " ", " ", " ", " ", " ", " ", " " ]
+      @board = [ " ", " ", " ", " ", " ", " ", " ", " ", " " ]
+
     @turn = 0
     @winning_positions = [[0, 4, 8], [3, 4, 5], [1, 4, 7], [2, 4, 6], [0, 1, 2], [0, 3, 6], [6, 7, 8], [2, 5, 8]]
+
+  end
+
+  def populate_board
+    moves = Move.where(game_id: :id)
     moves.each do |move|
-      @turn += 1
+      # @turn += 1
       @board[move.position] = move.token
     end
   end
@@ -33,6 +39,7 @@ class Game < ActiveRecord::Base
     raise "Invalid position" unless position_in_bounds?(position)
 
     raise "Position #{position} is occupied" if position_is_occupied?(position)
+
 
     Move.create game_id: self.id, user_id: user.id, position: position, token: which_token_next
 

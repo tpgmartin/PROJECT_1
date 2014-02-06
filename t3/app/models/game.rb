@@ -1,7 +1,6 @@
 class Game < ActiveRecord::Base
   # attr_accessible :name, :rating, :description, :win, :loss
-
-  attr_reader :board
+  attr_accessible :user2_id
 
   belongs_to :user1, class_name: 'User'
   belongs_to :user2, class_name: 'User'
@@ -9,21 +8,13 @@ class Game < ActiveRecord::Base
   has_many :moves
   after_initialize :setup_initial_values
 
-  
-  def setup_initial_values
-    @board = [ " ", " ", " ", " ", " ", " ", " ", " ", " " ]
-
-    @turn = 0
-    @winning_positions = [[0, 4, 8], [3, 4, 5], [1, 4, 7], [2, 4, 6], [0, 1, 2], [0, 3, 6], [6, 7, 8], [2, 5, 8]]
-
+  def board
+    moves_made_array
   end
 
-  def populate_board
-    moves = Move.where(game_id: :id)
-    moves.each do |move|
-      # @turn += 1
-      @board[move.position] = move.token
-    end
+  def setup_initial_values
+    @turn = 0
+    @winning_positions = [[0, 4, 8], [3, 4, 5], [1, 4, 7], [2, 4, 6], [0, 1, 2], [0, 3, 6], [6, 7, 8], [2, 5, 8]]
   end
 
   def make_move(user, position)
@@ -61,18 +52,21 @@ class Game < ActiveRecord::Base
   end
 
   def position_is_occupied?(position)
-    @board[position] != " "
+    moves_made_array[position] != " "
 
   end
 
   def moves_made_array
-    moves.each do |move|
-      @board[move.position] = move.token
+    board = [ " ", " ", " ", " ", " ", " ", " ", " ", " " ]
+
+    moves.map do |move|
+      board[move.position] = move.token
     end
+    board
   end
 
   def game_is_finished?
-    !@board.include?(" ")  
+    !moves_made_array.include?(" ")  
   end
 
   def whose_turn
@@ -86,13 +80,10 @@ class Game < ActiveRecord::Base
   def hasWon?
     user = nil
     @winning_positions.each { |a|
-      user = @board[a[0]]
-      if user != " " && (@board[a[0]] == @board[a[1]]) && (@board[a[1]] == @board[a[2]])
+      user = moves_made_array[a[0]]
+      if user != " " && (moves_made_array[a[0]] == moves_made_array[a[1]]) && (moves_made_array[a[1]] == moves_made_array[a[2]])
         puts "Congratulations " + user + " you have won!"
         return user
-        gets
-        @board = [ " ", " ", " ", " ", " ", " ", " ", " ", " " ]  
-        Game.new
       end
     }
     return false

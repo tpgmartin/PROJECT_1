@@ -7,27 +7,43 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><%= link_to "Home", '/' %></li>
-      <li><%= link_to "Users", users_path%></li>
-      <li><%= link_to "Games", games_path%></li>
-    </ul>
-  </nav>
+  <div id="container">
+    <header>
+      <nav>
 
-  <% flash.each do |name, message| %>
-    <div class="flash-message flash-message-<%=name%>">
-      <%= message %>
-    </div>
-  <% end %>
+        <a href='/'><img src="http://icons.iconarchive.com/icons/icondesigner.net/hyperion/256/Games-icon.png"></a>
 
-  <% if current_user %>
-    <p>Welcome, <%= current_user.email %></p>
-    <%= link_to 'Logout', sessions_path(session), method: :delete, data: {confirm: 'Are you sure?'} %>
-  <% else %>
-    <%= link_to 'Please login', login_path %>
-  <% end %>
-<%= yield %>
+        <ul>
+          <li><%= link_to "Home", '/' %></li> | 
+          <li><%= link_to "Users", users_path%></li> | 
+          <li><%= link_to "Games", games_path%></li> |
 
+          <li>
+      <% flash.each do |name, message| %>
+        <div class="flash-message flash-message-<%=name%>">
+          <%= message %>
+        </div>
+      <% end %>
+      </li>
+
+      <li>
+      <% if current_user %>
+        <p>Welcome, <%= current_user.email %></p> |
+        <%= link_to 'Logout', sessions_path(session), method: :delete, data: {confirm: 'Are you sure?'} %>
+      <% else %>
+        <%= link_to 'Please login', login_path %>
+      <% end %>
+      </li>
+      </ul>
+      </nav>
+    </header>
+  <div id="content">
+    <%= yield %>
+  </div>
+
+  <footer>
+    <p>&copy; Tom 2014</p>
+  </footer>
+  </div>
 </body>
 </html>

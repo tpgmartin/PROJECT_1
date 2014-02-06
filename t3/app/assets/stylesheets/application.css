@@ -1,13 +1,70 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
+body {
+  background: #678BD3;
+  margin:0;
+  padding:0;
+}
+
+div {
+  border-radius: 10px 10px;
+
+}
+
+div #container {
+  background: #6CB0DD;
+
+}
+
+header {
+  margin: 0 auto;
+  width: 50%;
+  background: #6CB0DD;
+  border-radius: 10px 10px;
+  border: #84CCCC solid thin;
+}
+
+a:link, a:active, a:hover, a:visited {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2em;
+  font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+}
+
+div #content {
+  background: #6CB0DD;
+  margin: 0 auto;
+  width: 50%; 
+  border: #84CCCC solid thin;
+}
+
+nav img {
+  height: 20px;
+}
+
+ul li {
+  list-style: none;
+  display: inline;
+}
+
+header img {
+  display: inline;
+  margin: 0;
+  float: left;
+  
+}
+
+footer {
+  margin: auto;
+  padding: auto;
+  width: 50%;
+  background: #6CB0DD;
+  border-radius: 10px 10px;
+  border: #84CCCC solid thin;
+}
+
+h1, h2 {
+  font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+
+h3, h4, h5, h6, p {
+  font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+}

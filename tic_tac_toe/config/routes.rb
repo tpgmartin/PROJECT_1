@@ -1,9 +1,9 @@
 TicTacToe::Application.routes.draw do
-  get 'login', to: "sessions#new"
+  # get 'login', to: "sessions#new"
 
-  get "sessions#create"
+  # get "sessions#create"
 
-  get "sessions#destroy"
+  # get "sessions#destroy"
 
   resources :moves
 
@@ -13,7 +13,7 @@ TicTacToe::Application.routes.draw do
 
   resources :users
 
-  resources :sessions, only: [:new, :create, :destroy]
+  # resources :sessions, only: [:new, :create, :destroy]
 
   root :to => 'users#index'
 

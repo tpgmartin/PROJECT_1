@@ -11,8 +11,8 @@
   def menu
     print `clear`
     puts "***Ruby TicTacToe***"
-    print "Choose to play against a (p)layer, (c)omputer player, or (q)uit: "
-    @opponent = gets.chomp.downcase
+    print "Choose to (p)lay the game or (q)uit: "
+    gets.chomp.downcase
   end
 
   def boardNotFull?
@@ -35,7 +35,7 @@
     puts "\t- + - + -"
     puts "\t4 | 5 | 6"
     puts "\t- + - + -"
-    puts "\t6 | 8 | 9"
+    puts "\t7 | 8 | 9"
   end
 
   def renderBoard
@@ -58,6 +58,7 @@
     renderBoard
     puts "Nobody won!" if !winning_position && boardNotFull? == false
     gets
+    @board = [ " ", " ", " ", " ", " ", " ", " ", " ", " " ]
     menu
   end
 
@@ -68,36 +69,32 @@
     renderBoard                 
     print who + "'s turn. " 
 
-    move = ""
-    while move == "" do
-      move = gets.chomp.to_i
-      if @board[move - 1] != " "
-        puts "There is already a #{@board[move - 1]} there!, choose another: "
-        move = ""
+    choice = ""
+    while choice == "" do
+      choice = gets.chomp.to_i
+      if @board[choice - 1] != " "
+        puts "There is already a #{@board[choice - 1]} there!, choose another: "
+        choice = ""
       end
     end
 
-    @board[move - 1] = turn.upcase     
+    @board[choice - 1] = turn.upcase     
     @turn += 1                  
   end
 
   def hasWon?
-    # if @turn < 3
-    #   return false
-    # else
     player = nil
-    # while @turn < 2
     @winning_positions.each { |a|
       player = @board[a[0]]
       if player != " " && (@board[a[0]] == @board[a[1]]) && (@board[a[1]] == @board[a[2]])
         puts "Congratulations " + player + " you have won!"
         return player
         gets
+        @board = [ " ", " ", " ", " ", " ", " ", " ", " ", " " ]
         menu
       end
     }
     return false
-  # end
   end
 
     response = menu
@@ -105,7 +102,7 @@
   while response != 'q'
     case response
     when 'p'
-      game
+      game 
     end
    
     response = menu
