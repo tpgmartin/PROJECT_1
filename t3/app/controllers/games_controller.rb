@@ -13,6 +13,7 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
+    @games = Game.all
     @game = Game.find(params[:id])
 
     respond_to do |format|
@@ -24,6 +25,7 @@ class GamesController < ApplicationController
   # GET /games/new
   # GET /games/new.json
   def new
+    @games = Game.all
     @game = Game.new
 
     respond_to do |format|
@@ -34,12 +36,14 @@ class GamesController < ApplicationController
 
   # GET /games/1/edit
   def edit
+    @games = Game.all
     @game = Game.find(params[:id])
   end
 
   # POST /games
   # POST /games.json
   def create
+    @games = Game.all
     @game = Game.new(params[:game])
     @game.user1 = current_user
 
@@ -57,6 +61,7 @@ class GamesController < ApplicationController
   # PUT /games/1
   # PUT /games/1.json
   def update
+    @games = Game.all
     @game = Game.find(params[:id])
 
     respond_to do |format|
@@ -73,6 +78,7 @@ class GamesController < ApplicationController
   # DELETE /games/1
   # DELETE /games/1.json
   def destroy
+    @games = Game.all
     @game = Game.find(params[:id])
     @game.destroy
 
@@ -83,6 +89,7 @@ class GamesController < ApplicationController
   end
 
   def move
+    @games = Game.all
     (redirect_to(login_path) and return) unless current_user
 
     @game = Game.find(params[:game_id])

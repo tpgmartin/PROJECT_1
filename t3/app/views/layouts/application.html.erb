@@ -35,6 +35,17 @@
       </ul>
       </nav>
 
+      <p>
+        Games in progress:
+        <% if current_user %>
+          <% @games.each do |game| %>
+            <% if game.user1.name == current_user.name %>
+              <%= link_to game.id, game %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </p>
+
     </header>
   <div id="content">
     <%= yield %>
