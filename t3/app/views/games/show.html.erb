@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div id="container" style="margin-left: 22%">
+<div id="container" style="margin-left: 15%">
 
   <table id="game" >
     <tr>
@@ -8,19 +8,19 @@
         <% if @game.position_is_occupied?(0) %>
           <%= @game.board[0]%>
         <% else %>
-          <%= button_to " ", game_make_move_path(@game, 0) %>
+          <%= button_to " ", game_make_move_path(@game, 0), {:style => "background: #ffffff; width: 120px; height:135px" } %>
         <% end %>
       </td>
       <td>
         <% if @game.board[1] == " " %>
-          <%= button_to " ", game_make_move_path(@game, 1) %>
+          <%= button_to " ", game_make_move_path(@game, 1), {:style => "background: #ffffff; width: 120px; height:135px" } %>
         <% else %>
           <%= @game.board[1]%>
         <% end %>
       </td>
       <td>
         <% if @game.board[2] == " " %>
-          <%= button_to " ", game_make_move_path(@game, 2) %>
+          <%= button_to " ", game_make_move_path(@game, 2), {:style => "background: #ffffff; width: 120px; height:135px" } %>
         <% else %>
           <%= @game.board[2]%>
         <% end %>
@@ -30,21 +30,21 @@
     <tr>
       <td>
         <% if @game.board[3] == " " %>
-          <%= button_to " ", game_make_move_path(@game, 3) %>
+          <%= button_to " ", game_make_move_path(@game, 3), {:style => "background: #ffffff; width: 120px; height:135px" } %>
         <% else %>
           <%= @game.board[3]%>
         <% end %>
       </td>
       <td>
         <% if @game.board[4] == " " %>
-          <%= button_to " ", game_make_move_path(@game, 4) %>
+          <%= button_to " ", game_make_move_path(@game, 4), {:style => "background: #ffffff; width: 120px; height:135px" } %>
         <% else %>
           <%= @game.board[4]%>
         <% end %>
       </td>
       <td>
         <% if @game.board[5] == " " %>
-          <%= button_to " ", game_make_move_path(@game, 5) %>
+          <%= button_to " ", game_make_move_path(@game, 5), {:style => "background: #ffffff; width: 120px; height:135px" } %>
         <% else %>
           <%= @game.board[5]%>
         <% end %>
@@ -54,21 +54,21 @@
     <tr>
       <td>
         <% if @game.board[6] == " " %>
-          <%= button_to " ", game_make_move_path(@game, 6) %>
+          <%= button_to " ", game_make_move_path(@game, 6), {:style => "background: #ffffff; width: 120px; height:135px" } %>
         <% else %>
           <%= @game.board[6]%>
         <% end %>
       </td>
       <td>
         <% if @game.board[7] == " " %>
-          <%= button_to " ", game_make_move_path(@game, 7) %>
+          <%= button_to " ", game_make_move_path(@game, 7), {:style => "background: #ffffff; width: 120px; height:135px" } %>
         <% else %>
           <%= @game.board[7]%>
         <% end %>
       </td>
       <td>
         <% if @game.board[8] == " " %>
-          <%= button_to " ", game_make_move_path(@game, 8) %>
+          <%= button_to " ", game_make_move_path(@game, 8), {:style => "background: #ffffff; width: 120px; height:135px" } %>
         <% else %>
           <%= @game.board[8]%>
         <% end %>
