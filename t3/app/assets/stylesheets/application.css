@@ -38,6 +38,11 @@ div #content {
   border: #84CCCC solid thin;
 }
 
+div #new {
+  margin: 10px auto;
+  margin-left: 5%;
+}
+
 nav img {
   height: 25px;
   padding-left: 20px;
@@ -84,10 +89,21 @@ h3, h4, h5, h6, p {
   margin-right: 5%;
 }
 
+p #flash {
+  font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+  margin-left: 5%;
+  margin-right: 5%; 
+  font-size: 1.2em
+}
+
 ul li {
   color: black;
   font-size: 1.1em;
   font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+}
+
+table#index {
+  margin-left: 5%;
 }
 
 #game tr {

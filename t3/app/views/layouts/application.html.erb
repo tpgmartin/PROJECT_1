@@ -22,32 +22,19 @@
       <li>
       <% if current_user %>
         | <%= link_to 'Logout', session_path(session), method: :delete, data: {confirm: 'Are you sure?'} %>
-        | Currently logged in as, 
-        <li>
+        | User:
         <%= current_user.email %>
-      </li>
+                <% flash.each do |name, message| %>
+          <%= message %>
+        <% end %>
       <% else %>
         | <%= link_to 'Login', login_path %>
+        | logged out!
       <% end %>
-      </li>
-
-        <li>
-      <% flash.each do |name, message| %>
-        <div class="flash-message flash-message-<%=name%>">
-          <%= message %>
-        </div>
-      <% end %>
-      </li>
-
-      <li>
-        <p>
-        <% if current_user %>
-
-        <% end %>
-        </p>
       </li>
       </ul>
       </nav>
+
     </header>
   <div id="content">
     <%= yield %>
