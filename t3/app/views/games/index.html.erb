@@ -11,9 +11,12 @@
     <th></th>
   </tr>
 
+
+
 <% @games.each do |game| %>
   <tr>
     <td><%= game.id %></td>
+    <td>User <%=game.user1_id%> vs. User <%=game.user2_id%></td>
     <td><%= link_to 'Show', game %></td>
     <% if can? :create, Game %>
     <td><%= link_to 'Edit', edit_game_path(game) %></td>

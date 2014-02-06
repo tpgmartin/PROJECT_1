@@ -21,6 +21,10 @@ class Game < ActiveRecord::Base
     Move.create game_id: self.id, user_id: user.try(:id), position: position, token: which_token_next
   end
 
+  # def has_started?
+  #   if board == [ " ", " ", " ", " ", " ", " ", " ", " ", " " ]
+  # end
+
   # def startWith
   #   @turn = 0
   # end

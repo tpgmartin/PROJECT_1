@@ -4,6 +4,7 @@ class Move < ActiveRecord::Base
   belongs_to :user, class_name: 'User'
   belongs_to :game
 
+  # validate :game_has_started
   validate :game_is_not_finished
   validate :player_has_not_won
   validate :not_a_tie
@@ -17,6 +18,10 @@ class Move < ActiveRecord::Base
   validates :token, presence: true
 
 
+  private
+  # def game_has_started
+  #   errors.add :game_id, "Game #{game_id} has begun" if game.has_started?
+  # end
 
   private
   def game_is_not_finished
