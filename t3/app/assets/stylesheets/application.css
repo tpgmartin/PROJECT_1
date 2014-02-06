@@ -1,5 +1,5 @@
 body {
-  background: #678BD3;
+  background-image: url('http://4.bp.blogspot.com/-vnayq4SF6Is/TtxVEVoEzII/AAAAAAAABFE/JPydeWd1frw/s1600/nintendo-background-8-745865.gif');
   margin:0;
   padding:0;
 }
@@ -19,6 +19,7 @@ header {
   width: 50%;
   background: #6CB0DD;
   border-radius: 10px 10px;
+  opacity: 0.6;
   border: #84CCCC solid thin;
 }
 
@@ -31,7 +32,8 @@ a:link, a:active, a:hover, a:visited {
 
 div #content {
   background: #6CB0DD;
-  margin: 0 auto;
+  opacity: 0.6;
+  margin: 10px auto;
   width: 50%; 
   border: #84CCCC solid thin;
 }
@@ -59,12 +61,23 @@ footer {
   background: #6CB0DD;
   border-radius: 10px 10px;
   border: #84CCCC solid thin;
+  opacity: 0.6;
 }
 
 h1, h2 {
   font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 h3, h4, h5, h6, p {
+  font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+ul li {
+  color: black;
+  font-size: 1.1em;
   font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 }

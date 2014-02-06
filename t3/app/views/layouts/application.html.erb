@@ -16,7 +16,7 @@
         <ul>
           <li><%= link_to "Home", '/' %></li> | 
           <li><%= link_to "Users", users_path%></li> | 
-          <li><%= link_to "Games", games_path%></li> |
+          <li><%= link_to "Games", games_path%></li>
 
           <li>
       <% flash.each do |name, message| %>
@@ -28,11 +28,22 @@
 
       <li>
       <% if current_user %>
-        <p>Welcome, <%= current_user.email %></p> |
-        <%= link_to 'Logout', sessions_path(session), method: :delete, data: {confirm: 'Are you sure?'} %>
+        | <%= link_to 'Logout', session_path(session), method: :delete, data: {confirm: 'Are you sure?'} %>
+        | Currently logged in as, 
+        <li>
+        <%= current_user.email %>
+      </li>
       <% else %>
-        <%= link_to 'Please login', login_path %>
+        | <%= link_to 'Please login', login_path %>
       <% end %>
+      </li>
+
+      <li>
+        <p>
+        <% if current_user %>
+
+        <% end %>
+        </p>
       </li>
       </ul>
       </nav>
