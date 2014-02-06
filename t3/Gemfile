@@ -9,6 +9,8 @@ gem 'sqlite3'
 
 # User added gem files
 
+gem 'cancan'
+
 group :development, :test do
         gem 'pry-rails'
         gem 'pry-byebug'

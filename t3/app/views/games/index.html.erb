@@ -1,6 +1,8 @@
 <h1>T3 Index</h1>
 
+<% if can? :create, Game %>
 <h4><%= link_to 'New Game', new_game_path %></h4>
+<% end %>
 
 <table>
   <tr>
@@ -13,8 +15,10 @@
   <tr>
     <td><%= game.id %></td>
     <td><%= link_to 'Show', game %></td>
+    <% if can? :create, Game %>
     <td><%= link_to 'Edit', edit_game_path(game) %></td>
     <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
   </tr>
 <% end %>
   

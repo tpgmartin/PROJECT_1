@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
 
   has_many :games
 
+  def role?(role)
+    self.role.to_s == role.to_s
+  end
+
 end
