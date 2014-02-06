@@ -64,6 +64,12 @@ footer {
   opacity: 0.6;
 }
 
+footer p {
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 h1, h2 {
   font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
   margin-left: 5%;
@@ -80,4 +86,9 @@ ul li {
   color: black;
   font-size: 1.1em;
   font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+}
+
+table {
+  margin-left: 5%;
+  margin-right: 5%; 
 }

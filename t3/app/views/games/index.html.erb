@@ -1,21 +1,22 @@
-<h1>Games Index</h1>
+<h1>T3 Index</h1>
+
+<h4><%= link_to 'New Game', new_game_path %></h4>
 
 <table>
   <tr>
-    <th></th>
+    <th>Game</th>
     <th></th>
     <th></th>
   </tr>
 
 <% @games.each do |game| %>
   <tr>
+    <td><%= game.id %></td>
     <td><%= link_to 'Show', game %></td>
     <td><%= link_to 'Edit', edit_game_path(game) %></td>
     <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+  
 </table>
-
-<br />
-
-<%= link_to 'New Game', new_game_path %>
+  <br>
