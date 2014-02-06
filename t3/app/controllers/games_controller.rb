@@ -83,10 +83,16 @@ class GamesController < ApplicationController
   end
 
   def move
-    redirect_to(login_path) unless current_user
+    (redirect_to(login_path) and return) unless current_user
+
     @game = Game.find(params[:game_id])
-    
-    @game.make_move current_user, params[:square].to_i
-    redirect_to @game
+    @move = @game.make_move current_user, params[:square].to_i
+
+    if @move.errors.empty?
+      redirect_to @game
+    else
+      flash.notice = @move.errors.full_messages.join(' ')
+      redirect_to @game
+    end
   end
 end

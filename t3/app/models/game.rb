@@ -18,24 +18,7 @@ class Game < ActiveRecord::Base
   end
 
   def make_move(user, position)
-    raise "Game has finished" if game_is_finished?
-
-    raise "Player has won" if hasWon?
-
-    raise "Ends in a tie" if game_is_finished? && hasWon? == false
-
-    raise "Incorrect user" unless [ user1_id, user2_id ].include?(user.id)
-
-    raise "Wrong turn" unless whose_turn == user
-
-    raise "Invalid position" unless position_in_bounds?(position)
-
-    raise "Position #{position} is occupied" if position_is_occupied?(position)
-
-
-    Move.create game_id: self.id, user_id: user.id, position: position, token: which_token_next
-
-
+    Move.create game_id: self.id, user_id: user.try(:id), position: position, token: which_token_next
   end
 
   # def startWith

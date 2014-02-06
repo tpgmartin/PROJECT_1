@@ -10,14 +10,14 @@ div {
 }
 
 div #container {
-  background: #6CB0DD;
+  margin: 0 auto;
 
 }
 
 header {
   margin: 0 auto;
   width: 50%;
-  background: #6CB0DD;
+  background: #11B000;
   border-radius: 10px 10px;
   opacity: 0.6;
   border: #84CCCC solid thin;
@@ -31,7 +31,7 @@ a:link, a:active, a:hover, a:visited {
 }
 
 div #content {
-  background: #6CB0DD;
+  background: #11B000;
   opacity: 0.6;
   margin: 10px auto;
   width: 50%; 
@@ -58,7 +58,7 @@ footer {
   margin: auto;
   padding: auto;
   width: 50%;
-  background: #6CB0DD;
+  background: #11B000;
   border-radius: 10px 10px;
   border: #84CCCC solid thin;
   opacity: 0.6;
@@ -88,7 +88,18 @@ ul li {
   font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 }
 
-table {
-  margin-left: 5%;
-  margin-right: 5%; 
+#game tr {
+   border:10px solid black;
+  text-align: center;
+  font-size: 80px 
+  
 }
+
+#game td {
+  border:10px solid black;
+  text-align: center;
+  font-size: 80px
+  height: 100px;
+  width: 100px;
+}
+
