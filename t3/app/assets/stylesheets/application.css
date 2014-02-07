@@ -26,7 +26,7 @@ header {
 a:link, a:active, a:hover, a:visited {
   text-decoration: none;
   color: black;
-  font-size: 1.2em;
+  font-size: 1em;
   font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 }
 

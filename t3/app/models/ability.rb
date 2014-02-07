@@ -8,8 +8,8 @@ class Ability
     if user.role? :admin
       can :manage, :all
     else
-      can [:read, :create], Game
-      can :create, User
+      cannot [:destroy, :edit], User
+      cannot [:destroy, :edit], Game
     end
     #
     # The first argument to `can` is the action you are giving the user 

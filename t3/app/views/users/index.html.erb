@@ -4,14 +4,12 @@
 
 <table id="index">
   <tr>
-    <th>Id</th>
     <th>Email</th>
     <th></th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.id %></td>
     <td><%= user.email %></td>
     <td><%= link_to 'Show', user %></td>
     <% if can? :create, Game %>

@@ -36,8 +36,8 @@
       </nav>
 
       <p>
-        Games in progress:
         <% if current_user %>
+          Games in progress: 
           <% @games.each do |game| %>
             <% if game.user1.name == current_user.name %>
               <%= link_to game.id, game %>

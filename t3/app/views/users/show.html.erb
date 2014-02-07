@@ -1,5 +1,21 @@
 <p id="notice"><%= notice %></p>
 
+<div id="new">
+
+<h1>Profile for <%= @user.name %></h1>
+
+<p>
+  Username:
+  <%= @user.name %>
+</p>
+
+<p>
+  Email:
+  <%= @user.email %>
+</p>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+</div>
