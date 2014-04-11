@@ -1,4 +1,5 @@
-# class TicTacToe
+# This is a practice ruby file to work out the logic of the tic tac toe game.
+# This can be played in the terminal.
 
   require "color_text"
 
